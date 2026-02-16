@@ -1,0 +1,35 @@
+[project]
+name = "yamp"
+version = "0.1.0"
+description = "YAML-Aided Metric Plotter - A lightweight, stateless monitoring dashboard"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi[standard]>=0.110.0",
+  "pydantic>=2.6.0",
+  "pyyaml>=6.0.1",
+  "httpx>=0.27.0",
+  "jinja2>=3.1.3",
+  "apscheduler>=3.10.4",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.3.0",
+  "mypy>=1.9.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "TCH", "ANN"]
+ignore = ["ANN101"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
